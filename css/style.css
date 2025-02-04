@@ -1,3 +1,24 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  text-align: center;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -87,6 +108,7 @@ ul,
 li {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -114,16 +136,20 @@ li {
   width: 100%;
   max-width: 1920px;
   margin: 0 auto;
-  padding: 0 var(--container-offset);
+
+  padding: 0;
+  position: relative;
 }
 
 /* app section */
 
+.logo-icon {
+  position: absolute;
+}
+
 .app-text_wrap {
   position: absolute;
   text-align: center;
-
-  padding: 4% 11.28% 0 11.28%;
 }
 
 .app-buttons {
@@ -135,6 +161,7 @@ li {
 }
 
 .app-head-text {
+  line-height: 1.2;
 }
 
 .download-button {
@@ -146,7 +173,7 @@ li {
 
   border: none;
 
-  border-radius: 40px;
+  border-radius: 10vw;
   text-decoration: none;
   box-shadow: 0 0 0 0 var(--button-outline-color, var(--color-yellow));
   transition: box-shadow 0.2s;
@@ -155,12 +182,10 @@ li {
 .download-button__android {
   background-color: var(--button-bg-color, var(--color-violet));
   color: #fff;
-  margin-bottom: 6.8%;
 }
 .download-button__apple {
   background-color: var(--button-bg-color, var(--color-yellow));
   color: #000;
-  margin-bottom: 14%;
 }
 
 .instruction-head-text {
@@ -176,7 +201,6 @@ li {
   justify-content: center;
   align-items: center;
 
-  width: 11.32%;
   aspect-ratio: 1;
 
   background-color: #20fb56;
@@ -184,11 +208,7 @@ li {
   border-radius: 50%;
 
   color: #0c1017;
-
-  font-size: 17.111px;
-  font-style: normal;
   font-weight: 800;
-  line-height: 30%;
 }
 
 .download-button:hover {
@@ -196,33 +216,70 @@ li {
 }
 
 .instruction-list {
-  padding: 0 13.64%;
-  font-size: 87.5%;
   color: #a5a5a5;
+}
+.instruction-item_text {
+  font-weight: 600;
+}
+
+.mobile-prew {
 }
 
 @media screen and (max-width: 480px) {
+  .logo-icon {
+    display: none;
+  }
   .app-head-text {
-    font-size: 211.53%;
+    font-size: clamp(7px, 3px + 7.897vw, 34px);
+
+    margin: 0 0 9% 0;
   }
 
   .app-text_wrap {
-    padding: 4% 11.28% 0 11.28%;
+    padding: 12.16% 11.28% 0 11.28%;
   }
 
   .download-button {
     aspect-ratio: 3.9;
     width: 69.86%;
-    font-size: 119.79%;
+    font-size: clamp(6px, 3px + 4.145vw, 22px);
   }
+
+  .download-button__android {
+    margin-bottom: 6.8%;
+  }
+
+  .download-button__apple {
+    margin-bottom: 10%;
+  }
+
   .icon-btn {
+    width: 17.663%;
     margin-right: 8%;
+  }
+  .icon-btn_ios {
+    width: 10.93%;
+    margin-right: 10%;
   }
 
   .instruction-head-text {
-    font-size: 124.76%;
+    font-size: clamp(5px, 3px + 4.359vw, 21px);
+
+    margin-bottom: 9%;
+  }
+  .instruction-list {
+    padding: 0 13.64%;
+  }
+  .circle {
+    width: clamp(2px, 4px + 5.15vw, 31px);
+    margin-bottom: 6%;
+    font-size: clamp(5px, 1.1px + 4.3vw, 31px);
   }
 
+  .instruction-item_text {
+    margin-bottom: 9%;
+    font-size: clamp(5px, 4.3px + 2.49vw, 31px);
+  }
   .bg-img {
     display: none;
   }
@@ -230,8 +287,97 @@ li {
   .bg-img-mob {
     width: 100%;
   }
+  .mobile-prew {
+    display: none;
+  }
 }
 @media screen and (min-width: 481px) {
+  .logo-icon {
+    width: 18.958%;
+
+    top: 10.178%;
+    left: 20.83%;
+  }
+  .app-text_wrap {
+    position: absolute;
+    top: 24.7%;
+    left: 20.83%;
+
+    width: 38%;
+    text-align: left;
+  }
+
+  .app-head-text {
+    font-size: clamp(14px, 4.1px + 2.6vw, 55px);
+
+    margin-bottom: 2.47%;
+  }
+  .app-buttons {
+    flex-direction: row;
+    gap: 5%;
+
+    margin-bottom: 8.448%;
+  }
+
+  .download-button {
+    width: 35.756%;
+    aspect-ratio: 242/62;
+    font-size: clamp(6px, 1.3px + 1vw, 22px);
+  }
+
+  .icon-btn {
+    width: 17.663%;
+    margin-right: 8%;
+  }
+  .icon-btn_ios {
+    width: 10.93%;
+    margin-right: 10%;
+  }
+
+  .instruction-head-text {
+    text-align: left;
+    font-size: clamp(5px, 1.3px + 1vw, 21px);
+
+    margin-bottom: 4.249%;
+  }
+
+  .instruction-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+  }
+
+  .instruction-list__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5%;
+    gap: 5%;
+  }
+
+  .circle {
+    width: 1.614vw;
+    height: 1.614vw;
+
+    font-size: clamp(6px, 1.1vw, 23px);
+  }
+
+  .instruction-item_text {
+    font-size: clamp(5px, 1.421px + 0.833vw, 18px);
+
+    text-align: left;
+  }
+
+  .mobile-prew {
+    width: clamp(100px, 18.63%, 360px);
+    aspect-ratio: 357.732/727.792;
+    position: absolute;
+    top: 6.9648%;
+    left: 60.677%;
+  }
+  .mobile-prew-img {
+    border-radius: 3.3vw;
+  }
+
   .bg-img-mob {
     display: none;
   }
