@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Styled Dropdown</title>
+    <style>
+      body {
+        background-color: #1f2937;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      .custom-select-container {
+        position: relative;
+        display: inline-block;
+      }
+
+      select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: #1f2937;
+        color: white;
+        padding: 10px 40px 10px 16px;
+        border: none;
+        border-radius: 9999px;
+        font-size: 16px;
+        cursor: pointer;
+        outline: none;
+      }
+
+      select:focus {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+      }
+
+      .custom-select-container::after {
+        content: '\25BC'; /* Dropdown icon */
+        color: white;
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="custom-select-container">
+      <select>
+        <option>European</option>
+        <option>Asian</option>
+        <option>American</option>
+        <option>African</option>
+      </select>
+    </div>
+  </body>
+</html>
